@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nik Naks Simbas | Contact & Crunchy Connections</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Mik Naks Products page - shows all flavors-->
+    <header class="site-header">
+  <div class="logo-area">
+    <i class="fas fa-cookie-bite"></i>
+    <h1>Nik Naks</h1>
+  </div>
+  
+  <nav class="nav-links">
+    <a href="product.html"><i class="fas fa-bread-slice"></i> Products</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="enquiry.html"><i class="fas fa-envelope"></i> Enquiry</a>
+  </nav>
+</header>
+
+
+    <ul>
+        <a href="index.html">Home</a> 
+        <a href="about.html">about</a>
+        <a href="product.html">product</a>
+        <a href="contact.html">contacts</a>
+        <a href="enquiry.html">enquiry</a>
+    </ul>
+<div class="contact-wrapper">
+    <div class="brand-bar">
+        <div class="logo">
+            <h2><i class="fas fa-paw"></i> Nik Naks Simbas <span>since 2020</span></h2>
+        </div>
+        <div class="tagline-badge">
+            <i class="fas fa-crown"></i> Crunchy & bold — the Simba spirit
+        </div>
+    </div>
+
+    <div class="contact-grid">
+        <!-- LEFT: Business contact info -->
+        <div class="info-panel">
+            <div class="info-title">Let’s connect </div>
+            <div class="info-desc">
+                Have a question about our snacks, wholesale orders, or want to collaborate with the Simbas crew? 
+                Reach out – we reply within a day.
+            </div>
+            <div class="contact-details">
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="detail-text">
+                        <h4>Nik Naks Simbas Hub</h4>
+                        <p>123 Crunchy Lane, Nairobi / snack district</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="detail-text">
+                        <h4>Call or WhatsApp</h4>
+                        <p>+254 700 123 456 <span style="font-size:0.7rem;">(business hours)</span></p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="detail-text">
+                        <h4>Email us</h4>
+                        <p>hello@niknakssimbas.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="business-hours">
+                <h4><i class="far fa-clock"></i> Simbas service hours</h4>
+                <div class="hours-row"><span>Mon – Fri</span><span>9:00 AM – 6:00 PM</span></div>
+                <div class="hours-row"><span>Saturday</span><span>10:00 AM – 4:00 PM</span></div>
+                <div class="hours-row"><span>Sunday</span><span>Closed (but online orders open)</span></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Contact form -->
+        <div class="form-panel">
+            <div class="form-header">
+                <h3>Send a message</h3>
+                <p>We’d love to hear from you — fill the form and we’ll get back soon.</p>
+            </div>
+
+            <!-- success alert -->
+            <div id="successMessage" class="success-banner" style="display: none;">
+                <i class="fas fa-check-circle fa-lg"></i>
+                <span id="successText">Thanks! Your message has been delivered to the Simbas team. We'll reply soon 🍿</span>
+            </div>
+
+            <form id="contactForm" novalidate>
+                <div class="input-group" id="nameGroup">
+                    <label><i class="fas fa-user"></i> Full name <span class="required">*</span></label>
+                    <input type="text" id="fullName" placeholder="e.g., Alex Simba">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="input-group" id="emailGroup">
+                    <label><i class="fas fa-envelope"></i> Email address <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="hello@example.com">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="input-group" id="phoneGroup">
+                    <label><i class="fas fa-mobile-alt"></i> Phone number <span style="font-weight:400;">(optional)</span></label>
+                    <input type="tel" id="phone" placeholder="+254 7XX XXX XXX">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+
+                <div class="input-group" id="subjectGroup">
+                    <label><i class="fas fa-tag"></i> Subject <span class="required">*</span></label>
+                    <select id="subjectSelect">
+                        <option value="" disabled selected>– Select enquiry type –</option>
+                        <option value="General question"> General question</option>
+                        <option value="Wholesale / bulk"> Wholesale / bulk order</option>
+                        <option value="Product feedback"> Product feedback</option>
+                        <option value="Partnership"> Partnership or event</option>
+                        <option value="Other"> Other</option>
+                    </select>
+                    <div class="error-message" id="subjectError"></div>
+                </div>
+
+                <div class="input-group" id="messageGroup">
+                    <label><i class="fas fa-comment"></i> Message <span class="required">*</span></label>
+                    <textarea id="message" placeholder="Tell us about your enquiry, flavour ideas, or order details..."></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send message</button>
+                <button type="button" id="clearFormBtn" class="btn-reset"><i class="fas fa-redo-alt"></i> Clear form</button>
+                <div class="note">
+                    <i class="fas fa-lock"></i> Your info is safe — no spam, only crunchy updates.
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
