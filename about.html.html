@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nik Naks | About Us – Crunchy Stories & Bold Flavours</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+     <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFF7EF;
+            background-image: repeating-linear-gradient(45deg, rgba(245, 180, 80, 0.02) 0px, rgba(245, 180, 80, 0.02) 2px, transparent 2px, transparent 8px);
+            color: #2D2418;
+        }
+
+        /* header / navbar */
+        .navbar {
+            background: #FFFFFFE6;
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo a {
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: #C13B1A;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4A3A2A;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #E05A2A;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #E05A2A;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            background: transparent;
+            color: #E05A2A;
+        }
+
+        .btn-outline:hover {
+            background: #E05A2A;
+            color: white;
+        }
+
+        /* main content */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* hero section */
+        .hero-about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(105deg, #FFF3E6 0%, #FFEAD9 100%);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .badge {
+            background: #E05A2A20;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #C13B1A;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #2C1D12;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: #5F4A34;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 10rem;
+            color: #E05A2A;
+            opacity: 0.7;
+            filter: drop-shadow(0 10px 12px rgba(0,0,0,0.1));
+        }
+
+        /* story section */
+        .story-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .story-text {
+            flex: 1.2;
+        }
+
+        .story-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .story-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #E05A2A;
+            border-radius: 3px;
+        }
+
+        .story-text p {
+            margin-top: 1.2rem;
+            line-height: 1.6;
+            color: #4F3B28;
+        }
+
+        .story-stats {
+            flex: 0.9;
+            background: #FFF4EA;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #E05A2A;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6B543C;
+        }
+
+        /* values grid */
+        .values-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .values-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 1.8rem 1.2rem;
+            border-radius: 1.8rem;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+            transition: 0.25s ease;
+            border: 1px solid #F5E2D2;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(193, 59, 26, 0.1);
+            border-color: #FFD7C2;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            background: #FCE6D8;
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: #E05A2A;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: #6E5A46;
+        }
+
+        /* team section */
+        .team-section {
+            margin: 4rem 0;
+            background: #FEF6EF;
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            text-align: center;
+            width: 220px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: 0.2s;
+        }
+
+        .member-avatar {
+            font-size: 3.2rem;
+            background: wheat;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            color: red;
+        }
+
+        .team-member h4 {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-member p {
+            font-size: 0.8rem;
+            color: burlywood;
+        }
+
+        /* cta banner */
+        .cta-banner {
+            background: linear-gradient(115deg, #2C1D12, #4A2E1C);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0 2rem;
+        }
+
+        .cta-banner h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: peachpuff;
+            color: black;
+            padding: 0.8rem 2rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            transition: 0.2s;
+        }
+
+        .cta-button:hover {
+            background: orange;
+            transform: scale(1.02);
+        }
+
+        /* footer */
+        footer {
+            background: black;
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: bisque;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 780px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-about {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .story-section {
+                flex-direction: column;
+            }
+            .story-stats {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><i class="fas fa-cookie-bite"></i> Nik Naks</a>
+        </div>
+        <div class="nav-links">
+             <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="product.html">Shop</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="btn-outline"><i class="fas fa-cart-shopping"></i> Crunch Box</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero / brand intro -->
+        <div class="hero-about">
+            <div class="hero-text">
+                <div class="badge"><i class="fas fa-leaf"></i> Est. 2020 · Nairobi</div>
+                <h1>Crunching boundaries, <br>one bold flavour at a time.</h1>
+                <p>Nik Naks isn’t just a snack — it’s a movement. We blend nostalgia with innovation, bringing you irresistible bites that spark joy, fuel conversations, and celebrate African vibrancy.</p>
+                <p style="font-size:0.9rem"><i class="fas fa-check-circle" style="color:#E05A2A;"></i> 100% natural ingredients & small-batch crafted</p>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-utensils"></i>
+                <!-- playful snack icons -->
+                <div style="margin-top: 0.5rem; font-size: 2rem;"></div>
+            </div>
+        </div>
+
+        <!-- Our story + stats -->
+        <div class="story-section">
+            <div class="story-text">
+                <h2>Our story</h2>
+                <p>Nik Naks was born from a late-night craving and a dream to put real, bold flavours into every bag. What started as a small kitchen experiment in 2020 has grown into a beloved snack brand known for our signature <strong>Simbas crunch</strong> — a playful, roaring twist on classic snacks. We combine locally sourced grains, spices, and a whole lot of heart to create treats that feel like home but taste like adventure.</p>
+                <p>From farmers' markets to being stocked in over 200 stores across Kenya, our journey is fuelled by snack lovers who believe that every bite should tell a story. Our name "Nik Naks" reflects the little moments — the ‘naks’ of joy between meals, the unexpected crunch that makes you smile.</p>
+            </div>
+            <div class="story-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Snacks sold</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Bold flavours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Local partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9⭐</div>
+                    <div class="stat-label">Customer love</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="values-section">
+            <h2>What makes us <span style="color:#E05A2A;">Nik Naks</span></h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Real ingredients</h3>
+                    <p>No artificial colours, no preservatives. Just honest crunch from nature’s pantry.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-hand-peace"></i></div>
+                    <h3>Community first</h3>
+                    <p>We work with small-scale farmers and local women’s groups to source and pack.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Bold innovation</h3>
+                    <p>From peri-peri popcorn to tamarind twists — we’re not afraid to go wild.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Eco-conscious</h3>
+                    <p>Compostable packaging & zero-waste production pilot in 2025.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet the Simbas team (playful leadership) -->
+        <div class="team-section">
+            <h2>🐾 The Simbas behind the crunch</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar"><i class="fas fa-crown"></i></div>
+                    <h4>Wanjiku "Naks"</h4>
+                    <p>Founder & Chief Crunch Officer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar"><i class="fas fa-flask"></i></div>
+                    <h4>Brian Simiyu</h4>
+                    <p>Flavour Alchemist</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar"><i class="fas fa-truck"></i></div>
+                    <h4>Fatima Hassan</h4>
+                    <p>Supply Roar Manager</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar"><i class="fas fa-heart"></i></div>
+                    <h4>The Snack Squad</h4>
+                    <p>20+ crunchy enthusiasts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Milestones / timeline (simple) -->
+        <div style="margin: 3rem 0;">
+            <h2 style="text-align:center; margin-bottom:2rem;">The Crunchy timeline</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
+                <div style="flex:1; min-width:160px; background:#FFF2E8; border-radius:1.5rem; padding:1rem; text-align:center;">
+                    <i class="fas fa-mortar-board" style="font-size:1.8rem; color:#E05A2A;"></i>
+                    <p style="font-weight:700; margin-top:8px;">2020</p>
+                    <small>First batch in a home kitchen</small>
+                </div>
+                <div style="flex:1; min-width:160px; background:#FFF2E8; border-radius:1.5rem; padding:1rem; text-align:center;">
+                    <i class="fas fa-store" style="font-size:1.8rem; color:#E05A2A;"></i>
+                    <p style="font-weight:700; margin-top:8px;">2022</p>
+                    <small>First retail shelf in Nairobi</small>
+                </div>
+                <div style="flex:1; min-width:160px; background:#FFF2E8; border-radius:1.5rem; padding:1rem; text-align:center;">
+                    <i class="fas fa-trophy" style="font-size:1.8rem; color:#E05A2A;"></i>
+                    <p style="font-weight:700; margin-top:8px;">2024</p>
+                    <small>Best Artisan Snack Award</small>
+                </div>
+                <div style="flex:1; min-width:160px; background:#FFF2E8; border-radius:1.5rem; padding:1rem; text-align:center;">
+                    <i class="fas fa-globe-africa" style="font-size:1.8rem; color:#E05A2A;"></i>
+                    <p style="font-weight:700; margin-top:8px;">2025</p>
+                    <small>Expanding across East Africa</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to action -->
+        <div class="cta-banner">
+            <h3>Join the Crunch Club </h3>
+            <p>Be the first to taste new flavours, get exclusive discounts, and snack stories.</p>
+            <a href="#" class="cta-button"><i class="fas fa-envelope"></i> Subscribe for updates</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Nik Naks</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Wholesale enquiry</a>
+            <a href="#">FAQs</a>
+        </div>
+        <p style="font-size:0.8rem;"><i class="fas fa-copyright"></i> 2025 Nik Naks Simbas — Crafted with crunch & care. 🧡</p>
+        <p style="font-size:0.7rem; margin-top:0.5rem;"> Nairobi, Kenya | hello@niknakssimbas.com</p>
+    </footer>
+
+</body>
+</html>
