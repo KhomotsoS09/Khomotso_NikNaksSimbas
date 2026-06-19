@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nik Naks | Enquiry & Wholesale Hub</title>
+    <!-- Google Fonts + Font Awesome 6 (free) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Mik Naks Products page - shows all flavors-->
+    <header class="site-header">
+  <div class="logo-area">
+    <i class="fas fa-cookie-bite"></i>
+    <h1>Nik Naks</h1>
+  </div>
+  
+  <nav class="nav-links">
+    <a href="product.html"><i class="fas fa-bread-slice"></i> Products</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="enquiry.html"><i class="fas fa-envelope"></i> Enquiry</a>
+  </nav>
+</header>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(125deg, #fff7e6 0%, #ffe6c9 100%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        /* decorative snack elements */
+        body::before {
+            content: "";
+            font-size: 110px;
+            opacity: 0.08;
+            position: fixed;
+            bottom: 10px;
+            right: 0;
+            pointer-events: none;
+            white-space: pre;
+            transform: rotate(-8deg);
+            letter-spacing: 15px;
+        }
+
+        /* main card */
+        .enquiry-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 55px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.2s;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* brand header */
+        .brand-header {
+            background: #F2622E;  /* bold orange reminiscent of snack packaging */
+            padding: 1.8rem 2.2rem 1.5rem 2.2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-header::after {
+            content: "";
+            font-size: 110px;
+            position: absolute;
+            bottom: -25px;
+            right: -20px;
+            opacity: 0.2;
+            pointer-events: none;
+            transform: rotate(10deg);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .logo-icon {
+            background: rgba(255,255,240,0.25);
+            width: 54px;
+            height: 54px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .brand-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .brand-header .tagline {
+            font-weight: 500;
+            opacity: 0.92;
+            font-size: 0.95rem;
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tagline i {
+            font-size: 0.85rem;
+        }
+
+        /* form panel */
+        .form-panel {
+            padding: 2.2rem 2.2rem 2rem;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .input-field {
+            margin-bottom: 1.1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-field label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #3b2a1f;
+            margin-bottom: 0.45rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .required {
+            color: #F2622E;
+            font-size: 0.8rem;
+        }
+
+        input, select, textarea {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #f0e0cf;
+            border-radius: 1.2rem;
+            font-size: 0.9rem;
+            background-color: #fefcf8;
+            transition: all 0.2s;
+            outline: none;
+            color: #2d2418;
+            font-weight: 500;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #F2622E;
+            box-shadow: 0 0 0 3px rgba(242, 98, 46, 0.15);
+            background-color: #ffffff;
+        }
+
+        /* error & success */
+        .error-message {
+            font-size: 0.7rem;
+            color: #d9534f;
+            margin-top: 5px;
+            margin-left: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+        }
+
+        .input-field.error input,
+        .input-field.error select,
+        .input-field.error textarea {
+            border-color: #d9534f;
+            background-color: #fff6f5;
+        }
+
+        .success-banner {
+            background: #E9F7EC;
+            border-radius: 1.5rem;
+            padding: 1rem 1.4rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-left: 5px solid #2e7d32;
+            color: #1e4620;
+            font-weight: 500;
+            animation: slideDown 0.3s ease;
+        }
+
+        .success-banner i {
+            font-size: 1.7rem;
+            color: #2e7d32;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* action buttons */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-submit {
+            background: #F2622E;
+            border: none;
+            padding: 0.9rem 1.6rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.25s;
+            flex: 1;
+            justify-content: center;
+            font-family: inherit;
+            box-shadow: 0 6px 14px rgba(242, 98, 46, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: #d84e1c;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(242, 98, 46, 0.35);
+        }
+
+        .btn-reset {
+            background: #f5ede4;
+            border: 1px solid #e7d9ce;
+            padding: 0.9rem 1.6rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #5c4b38;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            justify-content: center;
+            font-family: inherit;
+        }
+
+        .btn-reset:hover {
+            background: #e6d9cf;
+            border-color: #d4c2b2;
+            color: #3b2a1f;
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 1.8rem;
+            font-size: 0.7rem;
+            color: #a68b72;
+            border-top: 1px solid #f0e3d8;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 680px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            .form-panel {
+                padding: 1.5rem;
+            }
+            .brand-header {
+                padding: 1.4rem 1.5rem;
+            }
+            .brand-header h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* custom select arrow */
+        select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23F2622E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="enquiry-container">
+    <div class="brand-header">
+        <div class="logo-area">
+            <div class="logo-icon"></div>
+            <h1>Nik Naks <span style="font-weight:500;">Enquiry</span></h1>
+        </div>
+        <div class="tagline">
+            <i class="fas fa-bag-shopping"></i> Wholesale • Product questions • Custom mixes 
+            <i class="fas fa-heart" style="margin-left:6px;"></i>
+        </div>
+        <div class="tagline" style="font-size:0.8rem; margin-top:8px;">
+            We reply within 12–24 hours — let’s snack & talk!
+        </div>
+    </div>
+
+    <div class="form-panel">
+        <!-- success message container (dynamic) -->
+        <div id="successAlert" class="success-banner" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <span id="successMessageText"> Thanks! Your enquiry has landed safely. Our Nik Naks crew will reach out soon.</span>
+        </div>
+
+        <form id="nikNaksForm" novalidate>
+            <div class="two-col-grid">
+                <!-- Full name -->
+                <div class="input-field full-width" id="nameField">
+                    <label><i class="fas fa-user"></i> Full name <span class="required">*</span></label>
+                    <input type="text" id="fullName" placeholder="e.g., Jamie Rivers" autocomplete="name">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <!-- Email -->
+                <div class="input-field" id="emailField">
+                    <label><i class="fas fa-envelope"></i> Email <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="hello@niknaks.com" autocomplete="email">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Phone (optional) -->
+                <div class="input-field" id="phoneField">
+                    <label><i class="fas fa-phone-alt"></i> Phone <span style="font-weight:400;">(optional)</span></label>
+                    <input type="tel" id="phone" placeholder="+1 555 123 4567">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+
+                <!-- Enquiry Topic (dropdown) -->
+                <div class="input-field" id="topicField">
+                    <label><i class="fas fa-list-ul"></i> Enquiry type <span class="required">*</span></label>
+                    <select id="enquiryTopic">
+                        <option value="" disabled selected>– Select topic –</option>
+                        <option value="general"> General question</option>
+                        <option value="wholesale"> Wholesale / Bulk order</option>
+                        <option value="product"> Product feedback / suggestion</option>
+                        <option value="collab">Collaboration & events</option>
+                        <option value="other"> Other</option>
+                    </select>
+                    <div class="error-message" id="topicError"></div>
+                </div>
+
+                <!-- Product of interest (nice extra) -->
+                <div class="input-field" id="productInterestField">
+                    <label><i class="fas fa-candy-cane"></i> Product interest (optional)</label>
+                    <input type="text" id="productInterest" placeholder="e.g., salted caramel popcorn, snack mix, gift box">
+                    <div class="error-message" id="productInterestError"></div>
+                </div>
+
+                <!-- Message field -->
+                <div class="input-field full-width" id="messageField">
+                    <label><i class="fas fa-comment-dots"></i> Your message <span class="required">*</span></label>
+                    <textarea id="message" placeholder="Tell us everything – flavour ideas, order details, or just a snack chat..."></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send enquiry</button>
+                <button type="button" id="clearFormBtn" class="btn-reset"><i class="fas fa-undo-alt"></i> Clear form</button>
+            </div>
+            <div class="footnote">
+                <i class="fas fa-lock-alt"></i> Your info is safe with Nik Naks — no spam, only crunchy replies.
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
